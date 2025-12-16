@@ -3,68 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="verification" content="bacb74fbd2092e56d140909d788b3e11" />
+  <!-- Replace with your GSC verification token if you use it -->
+  <meta name="verification" content="REPLACE_WITH_VERIFICATION_TOKEN" />
 
-  <title>DogDNA.bio – Best Dog DNA Tests (2025)</title>
+  <title>DogDNA.bio – Best Dog DNA Tests for Breed & Health (2025)</title>
   <meta name="description"
-        content="Compare the best dog DNA tests in 2025 for breed ID and health screening. Clear star ratings and direct links to top providers." />
+        content="Compare the best dog DNA tests in 2025. See which kits are best for breed identification, mixed-breed ancestry, health screening, and value — with clear pros/cons, FAQ, and buyer guidance." />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dogdna.bio/" />
 
-  <!-- Canonical points to the hub to avoid split authority -->
-  <link rel="canonical" href="https://www.petdna.bio/#best-dog" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="DogDNA.bio – Best Dog DNA Tests (2025)" />
+  <meta property="og:description"
+        content="Independent, evidence-based overview of dog DNA tests: breed identification, mixed-breed ancestry, health screening, and value — with clear comparison and buyer guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dogdna.bio/" />
+  <!-- Optional: host your own OG image (recommended) -->
+  <meta property="og:image" content="https://dogdna.bio/og-image-dog-dna.jpg" />
 
   <link rel="stylesheet" href="/styles.css" />
 
+  <!-- Small table tweak (keeps buttons same width) -->
   <style>
-    body.consent-locked { overflow:hidden !important; touch-action:none !important; }
-    .consent-overlay{
-      position:fixed; inset:0; z-index:99999;
-      display:none; align-items:center; justify-content:center;
-      padding:20px; background:rgba(15,23,42,.82);
-      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    .buy-col .btn-primary,
+    .buy-col .btn-compare {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
-    .consent-overlay[aria-hidden="false"]{ display:flex; }
-    .consent-modal{
-      width:100%; max-width:720px; background:#0b1220; color:#e5e7eb;
-      border:1px solid rgba(148,163,184,.18); border-radius:16px;
-      box-shadow:0 20px 60px rgba(0,0,0,.45); overflow:hidden;
+
+    /* ===== Consent (HARD) ===== */
+    body.consent-locked {
+      overflow: hidden !important;
+      touch-action: none !important;
     }
-    .consent-header{ padding:18px 18px 0 18px; }
-    .consent-title{ margin:0; font-size:1.1rem; letter-spacing:.01em; }
-    .consent-body{ padding:14px 18px 18px 18px; line-height:1.55; color:#cbd5e1; font-size:.95rem; }
-    .consent-actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      padding:16px 18px 18px 18px;
-      background:rgba(2,6,23,.5);
-      border-top:1px solid rgba(148,163,184,.14);
+    .consent-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
-    .consent-btn{
-      appearance:none; border:0; border-radius:999px;
-      padding:10px 14px; font-weight:700; cursor:pointer;
-      font-size:.92rem; letter-spacing:.01em; white-space:nowrap;
+    .consent-overlay[aria-hidden="false"] { display: flex; }
+
+    .consent-modal {
+      width: 100%;
+      max-width: 720px;
+      background: #0b1220;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
     }
-    .consent-accept{ background:#ec4899; color:#0b1220; }
-    .consent-reject{ background:transparent; color:#e5e7eb; border:1px solid rgba(148,163,184,.35); }
-    .consent-links{ margin-left:auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap; font-size:.85rem; color:#94a3b8; }
-    .consent-links a{ color:#93c5fd; text-decoration:none; }
-    .consent-links a:hover{ text-decoration:underline; }
+    .consent-header { padding: 18px 18px 0 18px; }
+    .consent-title {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+    .consent-body {
+      padding: 14px 18px 18px 18px;
+      line-height: 1.55;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .consent-body p { margin: 10px 0; }
+    .consent-list { margin: 12px 0 0 0; padding-left: 18px; }
+    .consent-list li { margin: 6px 0; }
+
+    .consent-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 16px 18px 18px 18px;
+      background: rgba(2, 6, 23, 0.5);
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+    }
+    .consent-btn {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .consent-accept { background: #38bdf8; color: #0b1220; }
+    .consent-reject {
+      background: transparent;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+    .consent-links {
+      margin-left: auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .consent-links a { color: #93c5fd; text-decoration: none; }
+    .consent-links a:hover { text-decoration: underline; }
   </style>
 
+  <!-- Structured data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DogDNA.bio",
+    "url": "https://dogdna.bio/",
+    "description": "Independent, evidence-based overview of dog DNA test kits for breed identification and health screening.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ronarn",
+      "url": "https://ronarn.com"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a dog DNA test tell you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most dog DNA tests estimate breed mix and can flag selected genetic markers. Some kits focus on breed identification, others include health screening. Results are best treated as guidance and discussed with a veterinarian if health-related."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are dog DNA tests accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Accuracy varies by company, reference database, and your dog’s ancestry. Breed estimates are generally more reliable when a provider has a large breed reference set and clearly explains confidence levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I choose breed-only or breed + health?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your main goal is curiosity or training context, breed-only may be enough. If you care about potential inherited risks, choose a kit that includes health markers and provides clear explanations and limitations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do results take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most kits quote roughly 2–6 weeks after the lab receives the sample. Timing can vary with shipping, peak seasons, and sample quality."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Consent + GA loader (GA4 loads only AFTER accept) -->
   <script>
     (function () {
       const CONSENT_KEY = "ronarn_consent_analytics_v1";
-      const GA_ID = "P97L90X454"; // Replace with your GA4 Measurement ID (usually G-XXXXXXX)
+      // Your global ID from ronarn: set to your real GA4 Measurement ID (usually looks like G-XXXXXXX).
+      const GA_ID = "P97L90X454";
 
       function lockPage() {
         document.body.classList.add("consent-locked");
         const overlay = document.getElementById("consent-overlay");
         if (overlay) overlay.setAttribute("aria-hidden", "false");
       }
+
       function unlockPage() {
         document.body.classList.remove("consent-locked");
         const overlay = document.getElementById("consent-overlay");
         if (overlay) overlay.setAttribute("aria-hidden", "true");
       }
+
       function loadGA4() {
         if (window.__gaLoaded) return;
         window.__gaLoaded = true;
@@ -81,9 +208,16 @@
         gtag("js", new Date());
         gtag("config", GA_ID, { anonymize_ip: true });
       }
-      function setConsent(value){ localStorage.setItem(CONSENT_KEY, value); }
-      function getConsent(){ return localStorage.getItem(CONSENT_KEY); }
-      function clearConsent(){ localStorage.removeItem(CONSENT_KEY); }
+
+      function setConsent(value) {
+        try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+      }
+      function getConsent() {
+        try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+      }
+      function clearConsent() {
+        try { localStorage.removeItem(CONSENT_KEY); } catch (e) {}
+      }
 
       window.__openPrivacySettings = function () {
         clearConsent();
@@ -93,18 +227,28 @@
       document.addEventListener("DOMContentLoaded", function () {
         const saved = getConsent();
 
-        if (saved === "accepted") { loadGA4(); unlockPage(); return; }
-        if (saved === "rejected") { unlockPage(); return; }
+        if (saved === "accepted") {
+          loadGA4();
+          unlockPage();
+          return;
+        }
+        if (saved === "rejected") {
+          unlockPage();
+          return;
+        }
 
         lockPage();
 
-        document.getElementById("consent-accept").addEventListener("click", function () {
+        const btnAccept = document.getElementById("consent-accept");
+        const btnReject = document.getElementById("consent-reject");
+
+        btnAccept.addEventListener("click", function () {
           setConsent("accepted");
           loadGA4();
           unlockPage();
         });
 
-        document.getElementById("consent-reject").addEventListener("click", function () {
+        btnReject.addEventListener("click", function () {
           setConsent("rejected");
           unlockPage();
         });
@@ -114,7 +258,7 @@
 </head>
 
 <body class="consent-locked">
-
+  <!-- HARD Consent Overlay -->
   <div id="consent-overlay" class="consent-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Privacy choices">
     <div class="consent-modal">
       <div class="consent-header">
@@ -122,11 +266,15 @@
       </div>
       <div class="consent-body">
         <p>
-          DogDNA.bio uses <strong>analytics</strong> to understand which pages are useful.
-          This helps improve our dog DNA test comparisons.
+          DogDNA.bio uses <strong>analytics</strong> to understand which pages people find useful.
+          We only load Google Analytics (GA4) if you accept.
         </p>
+        <ul class="consent-list">
+          <li><strong>If you accept:</strong> we measure visits and basic usage trends.</li>
+          <li><strong>If you reject:</strong> the site still works normally, but we do not load analytics.</li>
+        </ul>
         <p>
-          We do not sell DNA tests. Links may be affiliate links, but acceptance is only about <strong>analytics</strong>.
+          Links may be affiliate links. Acceptance here is only about <strong>analytics</strong>.
         </p>
       </div>
       <div class="consent-actions">
@@ -145,77 +293,278 @@
 
   <div class="page">
 
+    <!-- HEADER -->
     <header>
       <div class="brand">
         <div class="brand-name">DogDNA.bio</div>
         <div class="brand-tagline">
-          Dog DNA tests – breed ID, health screening, and traits.
+          Independent comparison of dog DNA tests — breed, ancestry, and health screening (without hype).
         </div>
       </div>
       <div class="trust-tags">
-        <span class="trust-tag">Independent comparisons</span>
-        <span class="trust-tag">No paid rankings</span>
-        <span class="trust-tag">Affiliate-supported</span>
+        <span class="trust-tag">No sponsorships</span>
+        <span class="trust-tag">Evidence-based framing</span>
+        <span class="trust-tag">Affiliate-supported (when available)</span>
       </div>
     </header>
 
+    <!-- MAIN -->
     <main>
 
+      <!-- HERO -->
       <section class="hero" aria-labelledby="hero-heading">
         <div>
-          <h1 id="hero-heading" class="hero-title">Best dog DNA tests (2025).</h1>
+          <h1 id="hero-heading" class="hero-title">
+            Find the right dog DNA test for your actual goal.
+          </h1>
 
           <p class="hero-subtitle">
-            DogDNA.bio is a focused entry point. The full comparison table and updates live on our hub:
-            <strong>PetDNA.bio</strong>.
+            Most people want one of three things: (1) a breed mix estimate, (2) better context for training and behavior,
+            or (3) health screening for selected inherited markers. DogDNA.bio helps you choose the kit that matches
+            the reason you’re testing — not the loudest marketing.
           </p>
 
-          <div class="hero-actions">
-            <a href="https://www.petdna.bio/#best-dog" class="btn-primary" rel="noopener">
-              Open the dog comparison table <span class="chevron">›</span>
-            </a>
-            <a href="https://www.petdna.bio/" class="btn-secondary" rel="noopener">Go to PetDNA.bio hub</a>
+          <ul class="hero-list">
+            <li>Compare kits by <strong>breed identification</strong>, <strong>health markers</strong>, and <strong>value</strong>.</li>
+            <li>Understand what results can (and cannot) tell you.</li>
+            <li>Get a clear buyer checklist before you order.</li>
+          </ul>
+
+          <div class="hero-highlight">
+            If you only want breed mix, choose a breed-focused kit. If health is a priority, pick a kit that clearly
+            explains limitations and encourages veterinary follow-up.
           </div>
 
-          <div class="hero-highlight" style="margin-top:16px;">
-            Tip: If your main goal is <strong>health screening</strong>, choose a kit explicitly labeled for health markers
-            and use results as a discussion starter with a veterinarian.
+          <div class="hero-actions">
+            <a href="#compare" class="btn-primary">
+              Compare dog DNA kits
+              <span class="chevron">›</span>
+            </a>
+            <a href="#choose" class="btn-secondary">
+              How to choose a kit
+            </a>
           </div>
+
+          <p class="hero-note">
+            Looking for broader pet DNA coverage (cats, mixed pet testing)? Visit
+            <a href="https://petdna.bio/" rel="noopener">PetDNA.bio</a>.
+          </p>
         </div>
 
         <aside class="hero-aside">
           <div class="rating-pill">
             <span class="star">★</span>
-            Most common use: <strong>Rescue breed mix</strong>
+            Most common use: <strong>breed identification for mixed-breed dogs</strong>
           </div>
           <p class="hero-note">
-            For mixed-breed dogs, database size and reference quality typically matter more than marketing claims.
+            For rescues and mixed-breed dogs, breed estimates can be helpful context for training,
+            activity needs, and general expectations — but they’re not a diagnosis, and results can evolve.
           </p>
         </aside>
       </section>
 
-      <section class="card">
-        <h2 class="section-title">Why this site points to a hub</h2>
+      <!-- COMPARISON TABLE -->
+      <section id="compare" aria-labelledby="compare-heading">
+        <h2 id="compare-heading" class="section-title">
+          Best dog DNA tests in 2025 — side by side
+        </h2>
         <p class="section-subtitle">
-          We keep one canonical comparison page so updates, links, and authority don’t split across multiple domains.
-          That makes SEO faster and affiliate compliance easier.
+          This table focuses on what most buyers care about: breed identification confidence, health marker coverage,
+          report clarity, and value. Links may be affiliate links when available.
+          Always verify the latest terms and testing scope on the provider’s official site before buying.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Shop</th>
+                <th scope="col">Dog DNA test</th>
+                <th scope="col">Best for</th>
+                <th scope="col">Breed ID</th>
+                <th scope="col">Health markers</th>
+                <th scope="col">Report clarity</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Embark (placeholder links) -->
+              <tr id="embark">
+                <td class="buy-col">
+                  <a href="https://example.com/embark?ref=dogdna.bio"
+                     class="btn-compare" rel="nofollow sponsored noopener" target="_blank">
+                    View offer
+                  </a>
+                </td>
+                <td class="brand-col">
+                  Embark Dog DNA Test
+                  <div class="badge-top">Strong all-rounder</div>
+                </td>
+                <td><span class="pill-skin">Breed + health screening</span></td>
+                <td>
+                  <div class="stars">★★★★★</div>
+                  <div class="rating-score">Typically strong for mixed-breed breakdowns.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★★</div>
+                  <div class="rating-score">Often the main reason people choose it.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★☆</div>
+                  <div class="rating-score">Clear reports, but read limitations carefully.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★☆☆</div>
+                  <div class="rating-score">Higher price; value depends on health priority.</div>
+                </td>
+              </tr>
+
+              <!-- Wisdom Panel (placeholder links) -->
+              <tr id="wisdom">
+                <td class="buy-col">
+                  <a href="https://example.com/wisdompanel?ref=dogdna.bio"
+                     class="btn-compare" rel="nofollow sponsored noopener" target="_blank">
+                    View offer
+                  </a>
+                </td>
+                <td class="brand-col">
+                  Wisdom Panel Dog DNA Test
+                  <div class="badge-top">Popular mainstream option</div>
+                </td>
+                <td><span class="pill-skin">Breed ID + selected health</span></td>
+                <td>
+                  <div class="stars">★★★★☆</div>
+                  <div class="rating-score">Good breed coverage for many common mixes.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★☆</div>
+                  <div class="rating-score">Useful markers; scope varies by kit tier.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★☆</div>
+                  <div class="rating-score">Usually easy to interpret for most owners.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★☆</div>
+                  <div class="rating-score">Often strong value if discounted.</div>
+                </td>
+              </tr>
+
+              <!-- Breed-only budget kit (generic/Amazon placeholder) -->
+              <tr id="breedonly">
+                <td class="buy-col">
+                  <!-- Replace YOURAMAZONTAG-20 with your Amazon tag if you use Amazon affiliates -->
+                  <a href="https://www.amazon.com/s?k=dog+dna+test&tag=YOURAMAZONTAG-20"
+                     class="btn-compare" rel="nofollow sponsored noopener" target="_blank">
+                    View offers
+                  </a>
+                </td>
+                <td class="brand-col">
+                  Breed-only budget kits
+                  <div class="badge-top">Budget / curiosity</div>
+                </td>
+                <td><span class="pill-skin">Breed curiosity</span></td>
+                <td>
+                  <div class="stars">★★★☆☆</div>
+                  <div class="rating-score">Varies a lot — check methodology and reviews.</div>
+                </td>
+                <td>
+                  <div class="stars">★☆☆☆☆</div>
+                  <div class="rating-score">Often minimal or not included.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★☆☆</div>
+                  <div class="rating-score">Look for clear confidence scoring and caveats.</div>
+                </td>
+                <td>
+                  <div class="stars">★★★★★</div>
+                  <div class="rating-score">Good if you only want a quick breed estimate.</div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-subtitle">
+          Star ratings are editorial, comparative, and designed to make trade-offs obvious at a glance.
+          Always validate health-related findings with a veterinarian.
         </p>
       </section>
 
+      <!-- HOW TO CHOOSE -->
+      <section id="choose" aria-labelledby="choose-heading" class="card">
+        <h2 id="choose-heading" class="section-title">How to choose the right dog DNA test</h2>
+        <p class="section-subtitle">
+          A good purchase decision is mostly about clarifying your goal and matching it to the kit’s strengths.
+        </p>
+
+        <ol class="numbered">
+          <li>
+            <strong>Decide your main goal:</strong> breed identification, health screening, or both.
+          </li>
+          <li>
+            <strong>Check what “health” actually includes:</strong> marker coverage differs by kit and region.
+          </li>
+          <li>
+            <strong>Look for transparency:</strong> confidence scoring, reference breeds, and explanation quality.
+          </li>
+          <li>
+            <strong>Plan for follow-up:</strong> health-related flags should be discussed with a veterinarian.
+          </li>
+          <li>
+            <strong>Compare total cost:</strong> add-ons, subscriptions, re-tests, and shipping can change value.
+          </li>
+        </ol>
+
+        <p class="section-subtitle">
+          For broader coverage beyond dogs (cats and general pet testing), see
+          <a href="https://petdna.bio/" rel="noopener">PetDNA.bio</a>.
+        </p>
+      </section>
+
+      <!-- MINI FAQ -->
+      <section class="card faq" aria-labelledby="faq-heading" style="margin-top: 24px;">
+        <h2 id="faq-heading" class="section-title">Dog DNA test FAQ</h2>
+
+        <h3>Can a dog DNA test diagnose disease?</h3>
+        <p>
+          No. Consumer tests can flag selected genetic markers or risks, but they are not diagnostic medical tests.
+          Treat results as informational and consult a veterinarian for medical decisions.
+        </p>
+
+        <h3>Do dog DNA results ever change?</h3>
+        <p>
+          They can. Providers may update reference databases and models over time, which can adjust breed estimates or interpretations.
+        </p>
+
+        <h3>What if my dog is a rescue with unknown background?</h3>
+        <p>
+          That’s one of the most common reasons to test. Breed mix estimates can provide useful context, especially for training and activity planning.
+        </p>
+      </section>
+
+      <!-- DISCLAIMER -->
       <section class="disclaimer">
         <p>
-          DogDNA.bio does not provide veterinary advice. This site is informational only.
-          Always read the provider’s current terms and privacy policy before buying.
+          DogDNA.bio does not provide veterinary, medical, or legal advice. This site is for informational and comparison purposes only.
+          Always review the provider’s current terms and testing scope before purchasing.
+        </p>
+        <p>
+          This website may be reader-supported. If you buy products via links on this page, we may earn a small commission
+          at no extra cost to you. We do not accept payment for positive reviews or higher rankings.
         </p>
       </section>
 
     </main>
 
+    <!-- FOOTER (your network footer pattern) -->
     <footer class="site-footer">
       <div class="footer-main">
-        <span>© <span id="year"></span> Retinol.bio – Evidence-based retinol education.</span>
-        <span>Operated by ronarn AS, Norway. Independent information site with links to Retynol.com.</span>
-        <span>Contact: <a href="mailto:info@retinol.bio">info@retinol.bio</a></span>
+        <span>© <span id="year"></span> DogDNA.bio – Evidence-based dog DNA test education.</span>
+        <span>Operated by ronarn AS, Norway. Independent information site.</span>
+        <span>Contact: <a href="mailto:info@dogdna.bio">info@dogdna.bio</a></span>
         <span>Business address: Pb. 1010 Lillestrøm Syd, 2012 Lillestrøm, Norway</span>
       </div>
 
@@ -223,7 +572,7 @@
         <span>
           <a href="https://privacypolicy.bio" target="_blank" rel="noopener">Privacy Policy</a> ·
           <a href="https://terms.bio" target="_blank" rel="noopener">Terms</a> ·
-          <a href="https://disclaimer.bio" target="_blank" rel="noopener">Medical & (ampersand) Affiliate Disclaimer</a> ·
+          <a href="https://disclaimer.bio" target="_blank" rel="noopener">Medical &amp; Affiliate Disclaimer</a> ·
           <a href="https://disclosure.bio" target="_blank" rel="noopener">Affiliate Disclosure</a> ·
           <a href="https://policies.bio" target="_blank" rel="noopener">Policies</a> ·
           <a href="https://transparency.bio" target="_blank" rel="noopener">Transparency</a>
@@ -241,13 +590,9 @@
           <a href="https://standards.bio" target="_blank" rel="noopener">Editorial Standards</a> ·
           <a href="https://audits.bio" target="_blank" rel="noopener">Audits</a> ·
           <a href="https://verification.bio" target="_blank" rel="noopener">Verification</a> ·
-          <a href="https://indexing.bio" target="_blank" rel="noopener">Indexing</a> ·
-          <a href="https://retynol.com/" target="_blank" rel="noopener">Retynol.com – Product comparison</a>
-        </span>
-      </nav>
-
-      <nav class="footer-links">
-        <span>
+          <a href="https://indexing.bio" target="_blank" rel="noopener">Indexing</a looking for pet DNA? ·
+          <a href="https://petdna.bio/" target="_blank" rel="noopener">PetDNA.bio</a>
+          <span> · </span>
           <a href="#" onclick="window.__openPrivacySettings(); return false;">Privacy settings</a>
         </span>
       </nav>
@@ -256,7 +601,8 @@
   </div>
 
   <script>
-    (function(){ var y=document.getElementById("year"); if(y) y.textContent = new Date().getFullYear(); })();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+```0
